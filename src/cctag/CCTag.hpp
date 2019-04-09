@@ -114,9 +114,7 @@ public:
 
   virtual ~CCTag() = default;
 
-#ifndef NDEBUG
   void printTag( std::ostream& ostr ) const;
-#endif
 
   void scale(float s);
 

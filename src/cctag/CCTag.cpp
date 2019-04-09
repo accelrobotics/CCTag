@@ -142,7 +142,6 @@ void CCTag::serialize(boost::archive::text_oarchive & ar, unsigned int version)
 #endif
 }
 
-#ifndef NDEBUG
 using namespace std;
 
 void CCTag::printTag( std::ostream& ostr ) const
@@ -179,5 +178,4 @@ void CCTag::printTag( std::ostream& ostr ) const
 	ostr << endl;
     }
 }
-#endif
 } // namespace cctag

@@ -154,6 +154,7 @@ void detection(std::size_t frameId,
   for(const cctag::CCTag & marker : markers)
   {
     outStream << marker.x() << " " << marker.y() << " " << marker.id() << " " << marker.getStatus() << '\n';
+    marker.printTag(outStream);
     ++counter;
     if(marker.getStatus() == status::id_reliable)
       ++nMarkers;

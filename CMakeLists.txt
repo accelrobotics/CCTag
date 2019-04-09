@@ -76,7 +76,7 @@ if(BUILD_TESTS)
   include(BoostTestHelper)
 endif()
 
-find_package(Boost 1.53.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
+find_package(Boost 1.66.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
 
 if(CCTAG_WITH_CUDA)
   message( STATUS "Try finding CUDA" )
