@@ -153,11 +153,17 @@ void detection(std::size_t frameId,
 
   for(const cctag::CCTag & marker : markers)
   {
-    outStream << marker.x() << " " << marker.y() << " " << marker.id() << " " << marker.getStatus() << '\n';
-    marker.printTag(outStream);
-    ++counter;
-    if(marker.getStatus() == status::id_reliable)
+    if(marker.getStatus() == status::id_reliable) {
+      outStream << marker.x() << " " << marker.y() << " " << marker.id() << " " << marker.getStatus() << '\n';
+      marker.printTag(outStream);
+      outStream << "Center   : " << marker.rescaledOuterEllipse().center() << '\n';
+      outStream << "pi*a*b   : " << (3.1428 * marker.rescaledOuterEllipse().a() * marker.rescaledOuterEllipse().b()) << '\n';
+      outStream << "a        : " << marker.rescaledOuterEllipse().a() << '\n';
+      outStream << "b        : " << marker.rescaledOuterEllipse().b() << '\n';
+      outStream << "angle    : " << marker.rescaledOuterEllipse().angle() << '\n';
       ++nMarkers;
+    }
+    ++counter;
   }
   
   counter = 0;
